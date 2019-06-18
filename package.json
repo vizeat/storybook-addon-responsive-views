@@ -1,6 +1,6 @@
 {
   "name": "storybook-addon-responsive-views",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "View your Storybook stories in a range of responsive viewports",
   "keywords": [
     "addon",
@@ -13,7 +13,6 @@
     "url": "https://github.com/vizeat/storybook-addon-responsive-views/issues"
   },
   "publishConfig": {
-    "registry": "https://registry.npmjs.org",
     "access": "public"
   },
   "repository": {
@@ -43,9 +42,6 @@
     "@storybook/react": "^3.0.0 || ^4.0.0 || ^5.0.0",
     "prop-types": "^15.0.0",
     "react": "^16.0.0"
-  },
-  "publishConfig": {
-    "access": "public"
   },
   "scripts": {
     "build": "BABEL_ENV=production babel src/ --out-dir dist/ --copy-files",
