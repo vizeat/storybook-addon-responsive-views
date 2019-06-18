@@ -12,6 +12,10 @@
   "bugs": {
     "url": "https://github.com/vizeat/storybook-addon-responsive-views/issues"
   },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org",
+    "access": "public"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/vizeat/storybook-addon-responsive-views.git"
