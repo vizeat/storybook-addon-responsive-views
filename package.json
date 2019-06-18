@@ -1,6 +1,6 @@
 {
   "name": "storybook-addon-responsive-views",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "View your Storybook stories in a range of responsive viewports",
   "keywords": [
     "addon",
@@ -44,6 +44,7 @@
     "access": "public"
   },
   "scripts": {
-    "build": "BABEL_ENV=production babel src/ --out-dir dist/ --copy-files"
+    "build": "BABEL_ENV=production babel src/ --out-dir dist/ --copy-files",
+    "pub": "yarn build && yarn publish && git push --follow-tags"
   }
 }
