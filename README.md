@@ -7,7 +7,7 @@ When developing responsive applications, it's often the edges of breakpoints whi
 Install the following npm module
 
 ```
-  yarn add storybook-addon-responsive-views
+yarn add storybook-addon-responsive-views
 ```
 
 
@@ -15,7 +15,7 @@ Install the following npm module
 
 `withResponsiveViews` is added as a decorator to your stories. You can either add it globally to all stories, or to a story individually
 
-```
+```js
 // Globally in .storybook/config.js
 import { addDecorator } from '@storybook/react'
 import { withResponsiveViews } from 'storybook-addon-responsive-views'
@@ -25,7 +25,7 @@ addDecorator(withResponsiveViews)
 
 or
 
-```
+```js
 // In a .story file
 import { withResponsiveViews } from 'storybook-addon-responsive-views'
 
@@ -40,7 +40,7 @@ By default, there are two breakpoints set: tablet at 768px, and desktop at 1024p
 
 To set your own breakpoints, pass an object to the `withResponsiveViews` decorator. This can be done both on the global or local level by passing in a breakpoints object. You can add as many breakpoints as you like, with any key name you want. The key name is used in the view title. An example:
 
-```
+```js
 addDecorator(
   withResponsiveViews({
     mobile: 425,
