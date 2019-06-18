@@ -1,0 +1,24 @@
+{
+  "plugins": [
+    "@babel/plugin-proposal-class-properties",
+    "@babel/plugin-proposal-export-default-from",
+    "@babel/plugin-proposal-export-namespace-from",
+    "@babel/plugin-syntax-dynamic-import",
+    "@babel/plugin-syntax-import-meta",
+    "@babel/plugin-transform-modules-commonjs",
+  ],
+  "presets": [
+    "@babel/preset-react",
+    [
+      "@babel/preset-env",
+      {
+        "targets": {
+          "browsers": ["last 2 versions", "safari >= 7", "ie >= 9"],
+          "node": "10.0.0"
+        },
+        "forceAllTransforms": true,
+        "useBuiltIns": "entry"
+      }
+    ]
+  ]
+}

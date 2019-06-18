@@ -1,0 +1,49 @@
+{
+  "name": "storybook-addon-responsive-views",
+  "version": "1.0.0",
+  "description": "View your Storybook stories in a range of responsive viewports",
+  "keywords": [
+    "addon",
+    "responsive",
+    "storybook"
+  ],
+  "author": "vizeat",
+  "homepage": "https://github.com/vizeat/storybook-addon-responsive-views",
+  "bugs": {
+    "url": "https://github.com/vizeat/storybook-addon-responsive-views/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/vizeat/storybook-addon-responsive-views.git"
+  },
+  "license": "MIT",
+  "main": "dist/index.js",
+  "dependencies": {
+    "html-react-parser": "^0.6.2",
+    "react-frame-component": "^4.1.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.2.2",
+    "@babel/plugin-proposal-class-properties": "^7.0.0",
+    "@babel/plugin-proposal-export-default-from": "^7.0.0",
+    "@babel/plugin-proposal-export-namespace-from": "^7.0.0",
+    "@babel/plugin-syntax-dynamic-import": "^7.0.0",
+    "@babel/plugin-syntax-import-meta": "^7.0.0",
+    "@babel/polyfill": "^7.0.0",
+    "@babel/preset-env": "^7.0.0",
+    "@babel/preset-react": "^7.0.0"
+  },
+  "peerDependencies": {
+    "@storybook/addons": "^3.0.0 || ^4.0.0 || ^5.0.0",
+    "@storybook/react": "^3.0.0 || ^4.0.0 || ^5.0.0",
+    "prop-types": "^15.7.2",
+    "react": "^16.0.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "BABEL_ENV=production babel src/ --out-dir dist/ --copy-files"
+  }
+}
