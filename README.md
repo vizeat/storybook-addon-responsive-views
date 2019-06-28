@@ -13,7 +13,15 @@ yarn add storybook-addon-responsive-views
 
 ## Basic usage
 
-`withResponsiveViews` is added as a decorator to your stories. You can either add it globally to all stories, or to a story individually
+`withResponsiveViews` is added as a decorator to your stories.
+
+First, register the add on in `addons.js`. This gives you access to toggle the views on/off in the panel.
+
+```
+import 'storybook-addon-responsive-views/register'
+```
+
+Then you can either add it globally to all stories, or to a story individually
 
 ```js
 // Globally in .storybook/config.js
