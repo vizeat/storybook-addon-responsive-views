@@ -1,6 +1,6 @@
 {
   "name": "storybook-addon-responsive-views",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "View your Storybook stories in a range of responsive viewports",
   "keywords": [
     "addon",
@@ -22,12 +22,12 @@
   "license": "MIT",
   "main": "dist/index.js",
   "dependencies": {
-    "html-react-parser": "^0.6.2",
-    "react-frame-component": "^4.1.0",
     "@storybook/addons": "^5.0.0",
     "@storybook/react": "^5.0.0",
+    "html-react-parser": "^0.6.2",
     "prop-types": "^15.0.0",
-    "react": "^16.0.0"
+    "react": "^16.0.0",
+    "react-frame-component": "^4.1.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.2.3",
