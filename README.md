@@ -17,7 +17,7 @@ yarn add storybook-addon-responsive-views
 
 First, register the add on in `addons.js`. This gives you access to toggle the views on/off in the panel.
 
-```
+```js
 import 'storybook-addon-responsive-views/register'
 ```
 
@@ -62,3 +62,14 @@ addDecorator(
 ## Responsive views
 
 Your responsive views will appear beneath your story component, so that you can see how it looks at various sizes. To toggle the views on/off, use the checkbox in the 'Responsive Views' panel
+
+## Accessing document and window
+
+Each responsive view is rendered within an iFrame. To access the `document` and `window` properties for each iFrame, you'll need to import context into your story, for example:
+
+```js
+import { useContext } from 'react'
+import { ResponsiveViewContext } from 'storybook-addon-responsive-views'
+
+const { document, window } = useContext(ResponsiveViewContext)
+```
