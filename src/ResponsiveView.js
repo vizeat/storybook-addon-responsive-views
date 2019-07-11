@@ -1,7 +1,7 @@
-import React from 'react'
+import React, { Children } from 'react'
 import PropTypes from 'prop-types'
 import Parser from 'html-react-parser'
-import Frame, { FrameContextConsumer, FrameContext } from 'react-frame-component'
+import Frame, { FrameContextConsumer } from 'react-frame-component'
 
 export function ResponsiveView (props) {
   if (!props.renderViews) return null
@@ -45,9 +45,7 @@ export function ResponsiveView (props) {
               head={reactHtmlHead}
               style={{ height: '100%', width: '100%', border: 'none', boxShadow: 'rgba(0, 0, 0, 0.2) 0px 4px 10px 0px' }}
             >
-              <FrameContextConsumer>
-                {({ document, window }) => props.children}
-              </FrameContextConsumer>
+              {props.children}
             </Frame>
           </div>
         </div>
@@ -66,4 +64,4 @@ ResponsiveView.defaultProps = {
   renderViews: true,
 }
 
-export const ResponsiveContext = FrameContext
+export const ResponsiveContextConsumer = FrameContextConsumer

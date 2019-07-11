@@ -65,11 +65,21 @@ Your responsive views will appear beneath your story component, so that you can 
 
 ## Accessing document and window
 
-Each responsive view is rendered within an iFrame. To access the `document` and `window` properties for each iFrame, you'll need to import context into your story, for example:
+Each responsive view is rendered within an iFrame. To access the `document` and `window` properties for each iFrame, you'll need to import context into your story, and pass the document/window as a prop. For example:
 
 ```js
-import { useContext } from 'react'
-import { ResponsiveViewContext } from 'storybook-addon-responsive-views'
+import { ResponsiveViewContextConsumer } from 'storybook-addon-responsive-views'
 
-const { document, window } = useContext(ResponsiveViewContext)
+storiesOf('Component', module)
+  .add(
+    'MediaQuery',
+      () => {
+        return (
+          <ResponsiveViewContextConsumer>
+            {({ document, window }) => <Component window={window} />}
+          </ResponsiveViewContextConsumer>
+        )
+      }
+    )
+  )
 ```

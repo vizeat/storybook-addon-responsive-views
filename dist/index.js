@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.ResponsiveViewContext = exports.withResponsiveViews = exports.Decorator = void 0;
+exports.ResponsiveViewContextConsumer = exports.withResponsiveViews = exports.Decorator = void 0;
 
 var _react = _interopRequireWildcard(require("react"));
 
@@ -143,5 +143,5 @@ var withResponsiveViews = (0, _addons.makeDecorator)({
   }
 });
 exports.withResponsiveViews = withResponsiveViews;
-var ResponsiveViewContext = _ResponsiveView.ResponsiveContext;
-exports.ResponsiveViewContext = ResponsiveViewContext;
+var ResponsiveViewContextConsumer = _ResponsiveView.ResponsiveContextConsumer;
+exports.ResponsiveViewContextConsumer = ResponsiveViewContextConsumer;

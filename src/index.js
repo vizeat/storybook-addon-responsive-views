@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from 'react'
 import PropTypes from 'prop-types'
-import { ResponsiveView, ResponsiveContext } from './ResponsiveView'
+import { ResponsiveView, ResponsiveContextConsumer } from './ResponsiveView'
 
 import addons, { makeDecorator } from '@storybook/addons'
 
@@ -88,4 +88,4 @@ export const withResponsiveViews = makeDecorator({
   },
 })
 
-export const ResponsiveViewContext = ResponsiveContext
+export const ResponsiveViewContextConsumer = ResponsiveContextConsumer

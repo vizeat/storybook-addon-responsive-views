@@ -4,9 +4,9 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.ResponsiveView = ResponsiveView;
-exports.ResponsiveContext = void 0;
+exports.ResponsiveContextConsumer = void 0;
 
-var _react = _interopRequireDefault(require("react"));
+var _react = _interopRequireWildcard(require("react"));
 
 var _propTypes = _interopRequireDefault(require("prop-types"));
 
@@ -14,9 +14,9 @@ var _htmlReactParser = _interopRequireDefault(require("html-react-parser"));
 
 var _reactFrameComponent = _interopRequireWildcard(require("react-frame-component"));
 
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj["default"] = obj; return newObj; } }
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj["default"] = obj; return newObj; } }
 
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
@@ -90,11 +90,7 @@ function ResponsiveView(props) {
         border: 'none',
         boxShadow: 'rgba(0, 0, 0, 0.2) 0px 4px 10px 0px'
       }
-    }, _react["default"].createElement(_reactFrameComponent.FrameContextConsumer, null, function (_ref2) {
-      var document = _ref2.document,
-          window = _ref2.window;
-      return props.children;
-    }))));
+    }, props.children)));
   }));
 }
 
@@ -106,5 +102,5 @@ ResponsiveView.propTypes = {
 ResponsiveView.defaultProps = {
   renderViews: true
 };
-var ResponsiveContext = _reactFrameComponent.FrameContext;
-exports.ResponsiveContext = ResponsiveContext;
+var ResponsiveContextConsumer = _reactFrameComponent.FrameContextConsumer;
+exports.ResponsiveContextConsumer = ResponsiveContextConsumer;
