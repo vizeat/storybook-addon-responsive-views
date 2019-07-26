@@ -23,7 +23,7 @@ export class Panel extends Component {
   constructor (props) {
     super(props)
     this.state = {
-      enableViews: true,
+      enableViews: false,
     }
     this.toggleViews = this.toggleViews.bind(this)
   }
