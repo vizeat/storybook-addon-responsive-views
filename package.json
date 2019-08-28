@@ -24,6 +24,7 @@
   "main": "dist/index.js",
   "dependencies": {
     "@storybook/addons": "^5.0.0",
+    "@storybook/components": "^5.1.11",
     "@storybook/react": "^5.0.0",
     "html-react-parser": "^0.9.1",
     "prop-types": "^15.0.0",
