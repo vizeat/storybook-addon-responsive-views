@@ -1,7 +1,9 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 
-export class Panel extends Component {
+import { Icons, IconButton } from '@storybook/components';
+
+export class Tool extends Component {
   static propTypes = {
     api: PropTypes.shape({
       getQueryParam: PropTypes.func,
@@ -12,12 +14,10 @@ export class Panel extends Component {
       on: PropTypes.func,
       removeListener: PropTypes.func,
     }),
-    active: PropTypes.bool,
   }
 
   static defaultProps = {
     channel: undefined,
-    active: false,
   }
 
   constructor (props) {
@@ -44,15 +44,10 @@ export class Panel extends Component {
   }
 
   render () {
-    if (!this.props.active) return null
-
     return (
-      <div style={{ padding: 10 }}>
-        <input type='checkbox' checked={this.state.enableViews} onClick={this.toggleViews} />
-        <label style={{ fontSize: 14, fontWeight: 'bold', marginLeft: 5 }}>
-          {this.state.enableViews ? 'Disable responsive views 😥' : 'Enable responsive views 🙌'}
-        </label>
-      </div>
+      <IconButton key="viewport-rotate" title="Enable responsive views" onClick={this.toggleViews} active={this.state.enableViews}>
+        <Icons icon="switchalt" />
+      </IconButton>
     )
   }
 }

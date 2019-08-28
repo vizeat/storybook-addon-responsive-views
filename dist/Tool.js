@@ -3,11 +3,13 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.Panel = void 0;
+exports.Tool = void 0;
 
 var _react = _interopRequireWildcard(require("react"));
 
 var _propTypes = _interopRequireDefault(require("prop-types"));
+
+var _components = require("@storybook/components");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
@@ -33,25 +35,25 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
-var Panel =
+var Tool =
 /*#__PURE__*/
 function (_Component) {
-  _inherits(Panel, _Component);
+  _inherits(Tool, _Component);
 
-  function Panel(props) {
+  function Tool(props) {
     var _this;
 
-    _classCallCheck(this, Panel);
+    _classCallCheck(this, Tool);
 
-    _this = _possibleConstructorReturn(this, _getPrototypeOf(Panel).call(this, props));
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(Tool).call(this, props));
     _this.state = {
-      enableViews: true
+      enableViews: false
     };
     _this.toggleViews = _this.toggleViews.bind(_assertThisInitialized(_this));
     return _this;
   }
 
-  _createClass(Panel, [{
+  _createClass(Tool, [{
     key: "componentDidMount",
     value: function componentDidMount() {
       var _this2 = this;
@@ -75,31 +77,23 @@ function (_Component) {
   }, {
     key: "render",
     value: function render() {
-      if (!this.props.active) return null;
-      return _react["default"].createElement("div", {
-        style: {
-          padding: 10
-        }
-      }, _react["default"].createElement("input", {
-        type: "checkbox",
-        checked: this.state.enableViews,
-        onClick: this.toggleViews
-      }), _react["default"].createElement("label", {
-        style: {
-          fontSize: 14,
-          fontWeight: 'bold',
-          marginLeft: 5
-        }
-      }, this.state.enableViews ? 'Disable responsive views 😥' : 'Enable responsive views 🙌'));
+      return _react["default"].createElement(_components.IconButton, {
+        key: "viewport-rotate",
+        title: "Enable responsive views",
+        onClick: this.toggleViews,
+        active: this.state.enableViews
+      }, _react["default"].createElement(_components.Icons, {
+        icon: "switchalt"
+      }));
     }
   }]);
 
-  return Panel;
+  return Tool;
 }(_react.Component);
 
-exports.Panel = Panel;
+exports.Tool = Tool;
 
-_defineProperty(Panel, "propTypes", {
+_defineProperty(Tool, "propTypes", {
   api: _propTypes["default"].shape({
     getQueryParam: _propTypes["default"].func,
     setQueryParams: _propTypes["default"].func
@@ -108,11 +102,9 @@ _defineProperty(Panel, "propTypes", {
     emit: _propTypes["default"].func,
     on: _propTypes["default"].func,
     removeListener: _propTypes["default"].func
-  }),
-  active: _propTypes["default"].bool
+  })
 });
 
-_defineProperty(Panel, "defaultProps", {
-  channel: undefined,
-  active: false
+_defineProperty(Tool, "defaultProps", {
+  channel: undefined
 });
