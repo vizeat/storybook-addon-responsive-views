@@ -3,7 +3,7 @@ View your Storybook stories in a range of responsive viewports
 
 When developing responsive applications, it's often the edges of breakpoints which cause the most issues. This Storybook addon lets you preview your components/stories at a variety of breakpoints, so that you can be sure that your webapp will look great no matter what screen size ✨
 
-![Screenshot of 'Responsive Views' Storybook addon](https://github.com/vizeat/storybook-addon-responsive-views/docs/viewport.png)
+![Screenshot of 'Responsive Views' Storybook addon](https://github.com/vizeat/storybook-addon-responsive-views/blob/master/docs/viewport.png)
 
 ## Installation
 Install the following npm module
