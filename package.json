@@ -1,6 +1,6 @@
 {
   "name": "storybook-addon-responsive-views",
-  "version": "2.0.2",
+  "version": "2.1.0",
   "description": "View your Storybook stories in a range of responsive viewports",
   "keywords": [
     "addon",
