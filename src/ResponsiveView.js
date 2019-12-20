@@ -1,9 +1,9 @@
-import React, { Children } from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
 import Parser from 'html-react-parser'
 import Frame, { FrameContextConsumer } from 'react-frame-component'
 
-export function ResponsiveView (props) {
+export function ResponsiveView(props) {
   if (!props.renderViews) return null
 
   const VIEWPORTS = Object.keys(props.breakpoints).reduce(
@@ -18,7 +18,7 @@ export function ResponsiveView (props) {
       const breakpoint = { name: `${key}: ${value}px`, width: `${value}px` }
       return [...acc, belowBreakpoint, breakpoint]
     },
-    [{ name: `Minimum: 320px`, width: '320px' }]
+    [{ name: `Minimum: 320px`, width: '320px' }],
   )
 
   /**
@@ -43,7 +43,12 @@ export function ResponsiveView (props) {
              */}
             <Frame
               head={reactHtmlHead}
-              style={{ height: '100%', width: '100%', border: 'none', boxShadow: 'rgba(0, 0, 0, 0.2) 0px 4px 10px 0px' }}
+              style={{
+                height: '100%',
+                width: '100%',
+                border: 'none',
+                boxShadow: 'rgba(0, 0, 0, 0.2) 0px 4px 10px 0px',
+              }}
             >
               {props.children}
             </Frame>

@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react'
+import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { ResponsiveView, ResponsiveContextConsumer } from './ResponsiveView'
 
@@ -23,7 +23,7 @@ export class Decorator extends Component {
     },
   }
 
-  constructor (props) {
+  constructor(props) {
     super(props)
 
     const { channel, story } = props
@@ -41,7 +41,7 @@ export class Decorator extends Component {
     enableViews: true,
   }
 
-  componentDidMount () {
+  componentDidMount() {
     this.channel.emit('responsive-addons/check_status')
 
     this.channel.on('responsive-addons/enable_views', (isEnabled) => {
@@ -49,32 +49,26 @@ export class Decorator extends Component {
     })
   }
 
-  componentDidUpdate (prevProps) {
+  componentDidUpdate(prevProps) {
     if (this.props.story !== prevProps.story) {
       this.story = this.props.story
     }
   }
 
   renderStory = () => {
-    return (
-      <div style={{ margin: 15 }}>
-        {this.story}
-      </div>
-    )
+    return <div style={{ margin: 15 }}>{this.story}</div>
   }
 
   renderViews = () => {
     return (
-      <Fragment>
+      <>
         {this.renderStory()}
-        <ResponsiveView breakpoints={this.props.breakpoints}>
-          {this.story.props.children}
-        </ResponsiveView>
-      </Fragment>
+        <ResponsiveView breakpoints={this.props.breakpoints}>{this.story.props.children}</ResponsiveView>
+      </>
     )
   }
 
-  render () {
+  render() {
     const { enableViews } = this.state
     return enableViews ? this.renderViews() : this.renderStory()
   }
@@ -83,7 +77,9 @@ export class Decorator extends Component {
 export const withResponsiveViews = makeDecorator({
   name: 'withResponsiveViews',
   parameterName: 'responsiveViews',
-  wrapper: (getStory, context, { options }) => { // eslint-disable-line react/display-name
+  // eslint-disable-next-line react/display-name
+  wrapper: (getStory, context, { options }) => {
+    // eslint-disable-line react/display-name
     return <Decorator story={getStory(context)} breakpoints={options} />
   },
 })

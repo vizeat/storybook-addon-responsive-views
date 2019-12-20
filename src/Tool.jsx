@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 
-import { Icons, IconButton } from '@storybook/components';
+import { Icons, IconButton } from '@storybook/components'
 
 export class Tool extends Component {
   static propTypes = {
@@ -20,15 +20,15 @@ export class Tool extends Component {
     channel: undefined,
   }
 
-  constructor (props) {
+  constructor(props) {
     super(props)
     this.state = {
       enableViews: false,
     }
-    this.toggleViews = this.toggleViews.bind(this)
+    this.handleClick = this.handleClick.bind(this)
   }
 
-  componentDidMount () {
+  componentDidMount() {
     const { channel } = this.props
 
     channel.on('responsive-addons/check_status', () => {
@@ -36,17 +36,21 @@ export class Tool extends Component {
     })
   }
 
-  toggleViews () {
-    this.setState(
-      { enableViews: !this.state.enableViews },
-      () => this.props.channel.emit('responsive-addons/enable_views', this.state.enableViews)
+  handleClick() {
+    this.setState({ enableViews: !this.state.enableViews }, () =>
+      this.props.channel.emit('responsive-addons/enable_views', this.state.enableViews),
     )
   }
 
-  render () {
+  render() {
     return (
-      <IconButton key="viewport-rotate" title="Enable responsive views" onClick={this.toggleViews} active={this.state.enableViews}>
-        <Icons icon="switchalt" />
+      <IconButton
+        key='viewport-rotate'
+        title='Enable responsive views'
+        onClick={this.handleClick}
+        active={this.state.enableViews}
+      >
+        <Icons icon='switchalt' />
       </IconButton>
     )
   }

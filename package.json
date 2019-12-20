@@ -30,7 +30,7 @@
     "@storybook/addons": "^5.0.0",
     "@storybook/components": "^5.1.11",
     "@storybook/react": "^5.0.0",
-    "html-react-parser": "^0.9.1",
+    "html-react-parser": "^0.10.0",
     "prop-types": "^15.0.0",
     "react": "^16.0.0",
     "react-frame-component": "^4.1.0"
@@ -46,10 +46,22 @@
     "@babel/polyfill": "^7.0.0",
     "@babel/preset-env": "^7.0.0",
     "@babel/preset-react": "^7.0.0",
-    "core-js": "^3.0.0"
+    "babel-eslint": "^10.0.0",
+    "core-js": "^3.0.0",
+    "eslint": "^6.0.0",
+    "eslint-config-vizeat": "^7.0.1",
+    "eslint-plugin-import": "^2.19.1",
+    "eslint-plugin-node": "^10.0.0",
+    "eslint-plugin-prettier": "^3.1.1",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-react": "^7.14.3",
+    "eslint-plugin-react-hooks": "^2.3.0",
+    "eslint-plugin-standard": "^4.0.1",
+    "prettier": "^1.19.1"
   },
   "scripts": {
     "build": "BABEL_ENV=production babel src/ --out-dir dist/ --copy-files",
-    "pub": "yarn build && yarn publish && git push --follow-tags"
+    "pub": "yarn build && yarn publish && git push --follow-tags",
+    "lint": "eslint --cache -c .eslintrc src --ext .js,.jsx"
   }
 }
