@@ -5,6 +5,9 @@ When developing responsive applications, it's often the edges of breakpoints whi
 
 ![Screenshot of 'Responsive Views' Storybook addon](https://github.com/vizeat/storybook-addon-responsive-views/blob/master/docs/viewport.png)
 
+**Compatibility:** currently this addon works with React only. You can voice support for Angular and other frameworks in [#6](https://github.com/vizeat/storybook-addon-responsive-views/issues/6), or even better: send a PR adding support for it.
+
+
 ## Installation
 Install the following npm module
 
