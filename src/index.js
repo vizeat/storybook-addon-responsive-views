@@ -59,14 +59,11 @@ export class Decorator extends Component {
     return <div style={{ margin: 15 }}>{this.story}</div>
   }
 
-  renderViews = () => {
-    return (
-      <>
-        {this.renderStory()}
-        <ResponsiveView breakpoints={this.props.breakpoints}>{this.story.props.children}</ResponsiveView>
-      </>
-    )
-  }
+  renderViews = () => (
+    <ResponsiveView breakpoints={this.props.breakpoints}>
+      {this.story.props.children}
+    </ResponsiveView>
+  );
 
   render() {
     const { enableViews } = this.state
