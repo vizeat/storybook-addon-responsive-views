@@ -5,7 +5,9 @@
   "keywords": [
     "addon",
     "responsive",
-    "storybook"
+    "storybook",
+    "storybook-addon",
+    "style"
   ],
   "author": "vizeat",
   "homepage": "https://github.com/vizeat/storybook-addon-responsive-views",
