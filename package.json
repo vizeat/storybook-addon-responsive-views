@@ -63,6 +63,6 @@
     "build": "BABEL_ENV=production babel src/ --out-dir dist/ --copy-files",
     "pub": "yarn build && yarn publish && git push --follow-tags",
     "lint": "eslint --cache -c .eslintrc src --ext .js,.jsx",
-    "postinstall": "npm run build"
+    "prepare": "npm run build"
   }
 }
