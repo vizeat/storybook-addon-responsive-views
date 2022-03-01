@@ -17,7 +17,7 @@
     "access": "public"
   },
   "files": [
-    "src",
+    "dist",
     "register.js"
   ],
   "repository": {
@@ -25,7 +25,7 @@
     "url": "https://github.com/vizeat/storybook-addon-responsive-views.git"
   },
   "license": "MIT",
-  "main": "src/index.js",
+  "main": "dist/index.js",
   "dependencies": {
     "@storybook/addons": "^5.0.0",
     "@storybook/components": "^5.1.11",
@@ -62,6 +62,7 @@
   "scripts": {
     "build": "BABEL_ENV=production babel src/ --out-dir dist/ --copy-files",
     "pub": "yarn build && yarn publish && git push --follow-tags",
-    "lint": "eslint --cache -c .eslintrc src --ext .js,.jsx"
+    "lint": "eslint --cache -c .eslintrc src --ext .js,.jsx",
+    "postinstall": "npm run build"
   }
 }
