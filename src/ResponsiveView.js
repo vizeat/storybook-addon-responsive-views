@@ -6,20 +6,7 @@ import Frame, { FrameContextConsumer } from 'react-frame-component'
 export function ResponsiveView(props) {
   if (!props.renderViews) return null
 
-  const VIEWPORTS = Object.keys(props.breakpoints).reduce(
-    (acc, item) => {
-      const key = item.toLowerCase().replace(/^(.)|\s(.)/g, ($1) => $1.toUpperCase())
-      const value = props.breakpoints[item]
-
-      const belowBreakpoint = {
-        name: `${key}: ${value - 1}px (limit before breakpoint)`,
-        width: `${value - 1}px`,
-      }
-      const breakpoint = { name: `${key}: ${value}px`, width: `${value}px` }
-      return [...acc, belowBreakpoint, breakpoint]
-    },
-    [{ name: `Minimum: 320px`, width: '320px' }],
-  )
+  const VIEWPORTS = Object.keys(props.breakpoints)
 
   /**
    * All storybook stories are rendered inside an iFrame that contains the styles
