@@ -17,7 +17,7 @@
     "access": "public"
   },
   "files": [
-    "dist",
+    "src",
     "register.js"
   ],
   "repository": {
