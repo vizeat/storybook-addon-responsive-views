@@ -62,7 +62,6 @@ export class Decorator extends Component {
   renderViews = () => {
     return (
       <>
-        {this.renderStory()}
         <ResponsiveView breakpoints={this.props.breakpoints}>{this.story}</ResponsiveView>
       </>
     )
