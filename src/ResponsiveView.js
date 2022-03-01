@@ -27,7 +27,7 @@ export function ResponsiveView(props) {
       {VIEWPORTS.map(({ name, width }, i) => (
         <div key={i} style={{ margin: 15 }}>
           <p style={{ fontFamily: 'sans-serif' }}>{name}</p>
-          <div style={{ height: 300, width }}>
+          <div style={{ height: 568, width }}>
             {/*
              * Every viewport content must be rendered inside an iFrame to ensure
              * that all the component's media queries are really activated when its
